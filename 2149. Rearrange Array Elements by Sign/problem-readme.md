@@ -1,9 +1,0 @@
-- **Pattern**: Two-pointer stable partition into fixed slots (even index for positives, odd for negatives); effectively a round-robin merge by sign.
-- **Why it matters in DS/ML**: Mirrors class-balanced batching/stratified interleaving—useful when feeding models alternating or evenly mixed categories (e.g., positive/negative samples) or when normalizing signed deltas in ETL.
-- **Time/Space**: **Time** O(n) single pass; **Space** O(n) for the output array (stable and index-directed).
-- **Edge cases**:
-  - Input guarantees (for LC 2149): equal #positives and #negatives, all non-zero; solution assumes that.
-  - Stability: preserves relative order within positives and within negatives due to one-pass placement.
-  - Large n: avoid repeated inserts; direct indexing prevents O(n²) behavior.
-  - If generalizing beyond problem constraints: handle extra positives/negatives (fill remaining slots), and define what to do with zeros.
-- **Related DS task**: Class-balanced batching / stratified interleave of two labeled streams.
